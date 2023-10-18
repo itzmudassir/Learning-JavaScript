@@ -1,0 +1,9 @@
+const UserId = 1234
+let UserName = "John Doe"
+var UserAge = 30
+UserGender = "Male"
+let UserAddress 
+
+// UserId = 12345 // Error
+
+console.table({UserId, UserName, UserAge, UserGender, UserAddress})
