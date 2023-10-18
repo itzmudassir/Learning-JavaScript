@@ -5,5 +5,9 @@ UserGender = "Male"
 let UserAddress 
 
 // UserId = 12345 // Error
+UserName = "John Doe Jr."
+UserAge = 31
+UserAddress = "123 Main St."
+UserGender = "M"
 
 console.table({UserId, UserName, UserAge, UserGender, UserAddress})
