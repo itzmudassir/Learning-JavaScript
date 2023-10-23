@@ -8,6 +8,10 @@ score = String(score)
 // console.log(typeof score);
 
 // Boolean Conversion
-let isLoggedIn = 1
+let isLoggedIn = 0      //1 ==> true, 0 ==> false, "" ==> false, "Mudassir" ==> True
 let status = Boolean(isLoggedIn)
 console.log(status);
+
+
+
+
