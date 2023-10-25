@@ -8,3 +8,5 @@ let gpa = 3.86
 
 let myName = new String("mudassir") 
 console.log(myName.toUpperCase());
+console.log(myName.charAt(2));
+console.log(myName.indexOf("d"));
