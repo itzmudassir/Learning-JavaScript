@@ -4,3 +4,4 @@ let score = 400
 let balance = new Number(50)
 
 console.log(balance.toString().length);
+console.log(balance.toFixed(2));
