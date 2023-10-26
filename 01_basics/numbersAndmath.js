@@ -3,4 +3,4 @@ let score = 400
 
 let balance = new Number(50)
 
-console.log(typeof balance.toString());
+console.log(balance.toString().length);
