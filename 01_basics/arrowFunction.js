@@ -5,4 +5,10 @@ const chai = () => {
     
 }
 
-chai()
+// Implicit Return
+
+const implicitReturn = (num1, num2) => (num1 + num2) 
+
+console.log(implicitReturn(2,2))
+
+// chai()
