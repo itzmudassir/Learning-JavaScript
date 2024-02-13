@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI Calculator</title>
+    <style>
+      * {
+        font-family: Arial, sans-serif;
+      }
+      #container {
+        width: 400px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      #bmiForm {
+        margin-bottom: 20px;
+      }
+      #bmiResult {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      #weight,
+      #height {
+        width: 100px;
+        margin-bottom: 5px;
+        font-size: large;
+      }
+      button {
+        padding: 5px 10px;
+        font-size: large;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>BMI Calculator</h1>
+      <form id="bmiForm">
+        <div>
+          <label for="weight">Weight (kg):</label>
+          <input type="text" id="weight" name="weight" />
+        </div>
+        <div>
+          <label for="height">Height (cm):</label>
+          <input type="text" id="height" name="height" />
+        </div>
+        <div>
+          <button>Calculate</button>
+        </div>
+      </form>
+      <div id="bmiResult"></div>
+      <h2>BMI Weight Guide</h2>
+      <p>Underweight: less than 18.5</p>
+      <p>Normal: 18.5 - 24.9</p>
+      <p>Overweight: 25 - 29.9</p>
+      <p>Obese: 30 or more</p>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
