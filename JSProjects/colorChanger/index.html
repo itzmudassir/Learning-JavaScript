@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: #333;
+            text-align: center;
+            border-radius: 10px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 20px;
+            display: inline-block;
+        }
+        nav ul li a:hover {
+            background-color: #555;
+            border-radius: 10px;
+        }
+        .button {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            border-radius: 50%;
+            border: 1px solid #000;
+        }
+        #grey {
+            background-color: grey;
+        }
+        #blue {
+            background-color: blue;
+        }
+        #green {
+            background-color: green;
+        }
+        #yellow {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="https://github.com/itzmudassir">About</a></li>
+            <li><a href="mailto:itzmudassir07@gmail.com">Contact</a></li>
+        </ul>
+    </nav>
+    <h1>Color Changer</h1>
+    <span class="button" id="grey"></span>
+    <span class="button" id="blue"></span>
+    <span class="button" id="green"></span>
+    <span class="button" id="yellow"></span>
+    <script src="index.js"></script>
+</body>
+</html>
