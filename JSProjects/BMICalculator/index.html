@@ -2,13 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BMI Calculator</title>
     <style>
       * {
-        font-family: Arial, sans-serif;
+        font-family: Arial, Helvetica, sans-serif
         
       }
+      
       #container {
         width: 400px;
         margin: 0 auto;
@@ -30,7 +32,43 @@
       button {
         padding: 5px 10px;
         font-size: large;
+        border-radius: 15px;
+        background-color: #fd0e35;
+        color: white;
+        border-style: hidden;
+      }
+      form label {
+        display: inline-block;
+        width: 100px;
+        text-align: left;
         border-radius: 5px;
+      }
+      form div {
+        margin-bottom: 10px;
+      }
+      form input {
+        padding: 5px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        text-align: center;
+        
+      }
+      form input:focus {
+        outline: none;
+        border-color: #fd0e35;
+      }
+      form input::placeholder {
+        font-style: italic;
+        font-size: small;
+        text-align: center;
+      }
+      #madeWith {
+        margin-top: 20px;
+        font-size: small;
+      }
+      #madeWith a {
+        text-decoration: none;
+        color: #fd0e35;
       }
     </style>
   </head>
@@ -40,11 +78,11 @@
       <form id="bmiForm">
         <div>
           <label for="weight">Weight (kg):</label>
-          <input type="text" id="weight" name="weight" />
+          <input type="text" id="weight" name="weight" placeholder="ie.,57" />
         </div>
         <div>
           <label for="height">Height (cm):</label>
-          <input type="text" id="height" name="height" />
+          <input type="text" id="height" name="height" placeholder="ie.,167" />
         </div>
         <div>
           <button>Calculate</button>
@@ -56,7 +94,10 @@
       <p>Normal: 18.5 - 24.9</p>
       <p>Overweight: 25 - 29.9</p>
       <p>Obese: 30 or more</p>
+      <div id="madeWith">
+        <p>Made with ❤️ by <a href="https://www.linkedin.com/in/itzmudassir/" target="_blank">Mudassir</a></p>
     </div>
-    <script src="index.js"></script>
+
+    <script src="index.js"></script>  
   </body>
 </html>
