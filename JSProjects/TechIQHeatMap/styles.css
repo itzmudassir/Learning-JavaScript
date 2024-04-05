@@ -3,16 +3,18 @@
 body, html {
     height: 100%;
     margin: 0;
-    font-family: 'Work Sans' , sans-serif;
-  }
-  #container {
+    font-family: 'Work Sans', sans-serif;
+}
+
+#container {
     display: flex;
+    flex-direction: row; /* default direction */
     justify-content: space-between;
     padding: 20px;
     height: 100%;
-  }
-  #map {
-    
+}
+
+#map {
     flex-grow: 1;
     background: #ffffff;
     padding: 20px;
@@ -20,25 +22,52 @@ body, html {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-right: 20px;
     width: 70%;
-    
-  }
-  #filter-panel {
+}
+
+#filter-panel {
     width: 20%;
     background: #ffffff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
+}
 
-  }
-  .filter {
+.filter {
     margin-bottom: 1em;
-  }
-  .filter label {
+}
+
+.filter label {
     display: block;
-  }
-  .filter select {
+}
+
+.filter select {
     width: 100%;
     padding: 0.5em;
     margin-top: 0.5em;
-  }
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    #container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #map, #filter-panel {
+        width: 100%; /* Full width */
+        margin-right: 0; /* Remove margin between elements */
+        margin-bottom: 20px; /* Add some space below each element */
+    }
+
+    #map {
+        order: 2; /* Display map below filters on smaller screens */
+    }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+    .filter select, .filter label {
+        font-size: 14px; /* Adjust font size for better readability on small screens */
+    }
+}
