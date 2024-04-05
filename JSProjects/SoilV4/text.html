@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Beep Example</title>
+  <script src="cordova.js"></script> <!-- Include Cordova JavaScript file -->
+</head>
+<body>
+  <button onclick="beep()">Click to beep</button>
+
+  <script>
+    function beep() {
+      if (navigator.notification) {
+        navigator.notification.beep(1); // 1 beep
+      } else {
+        console.log("Your browser doesn't support beep notification.");
+      }
+    }
+  </script>
+</body>
+</html>
