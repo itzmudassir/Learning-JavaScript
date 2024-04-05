@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toggle Divs with Style</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+
+  button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 24px;
+    margin: 10px 0px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  div {
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  div:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+</style>
+</head>
+<body>
+
+<button id="btn1">Show Div 1</button>
+<button id="btn2">Show Div 2</button>
+
+<div id="div1" class="hidden">This is the first div.</div>
+<div id="div2" class="hidden">This is the second div.</div>
+
+<script>
+document.getElementById('btn1').addEventListener('click', function() {
+  document.getElementById('div1').style.display = 'block'; // Show div1
+  document.getElementById('div2').style.display = 'none';  // Hide div2
+});
+
+document.getElementById('btn2').addEventListener('click', function() {
+  document.getElementById('div1').style.display = 'none';   // Hide div1
+  document.getElementById('div2').style.display = 'block'; // Show div2
+});
+</script>
+
+</body>
+</html>
