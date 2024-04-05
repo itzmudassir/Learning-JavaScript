@@ -1,81 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Farm Status Dashboard</title>
-<link rel="stylesheet" href="Style.css">
-<script>
-  function toggleSelection(row, event) {
-    if (event.target.type !== 'checkbox') {
-      // First clear all selections
-      document.querySelectorAll('.row.selected').forEach(selectedRow => {
-        selectedRow.classList.remove('selected');
-      });
-      // Then toggle the 'selected' class on the clicked row
-      row.classList.add('selected');
-    }
-  }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farm Status Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
 
-  function selectAllFarms(source) {
-    let checkboxes = document.getElementsByName('farm');
-    for(var i = 0, n = checkboxes.length; i < n; i++) {
-      checkboxes[i].checked = source.checked;
-      // Update the 'selected' class for each row based on the checkbox.
-      checkboxes[i].parentNode.classList.toggle('selected', source.checked);
-    }
-  }
-  // Define status labels as variables
-  const statusOnline = "Online";
-  const statusOffline = "Offline";
-  const subscriptionActive = "Active";
-  const subscriptionExpired = "Expired";
+    <link rel="stylesheet" href="Style.css" />
+    <script>
+      function toggleSelection(row, event) {
+        if (event.target.type !== "checkbox") {
+          // First clear all selections
+          document.querySelectorAll(".row.selected").forEach((selectedRow) => {
+            selectedRow.classList.remove("selected");
+          });
+          // Then toggle the 'selected' class on the clicked row
+          row.classList.add("selected");
+        }
+      }
 
-  window.onload = () => {
-    // Apply the status labels to your elements here
-    document.querySelectorAll('.status-online').forEach(element => {
-      element.innerHTML = statusOnline;
-    });
+      function selectAllFarms(source) {
+        let checkboxes = document.getElementsByName("farm");
+        for (var i = 0, n = checkboxes.length; i < n; i++) {
+          checkboxes[i].checked = source.checked;
+          // Update the 'selected' class for each row based on the checkbox.
+          checkboxes[i].parentNode.classList.toggle("selected", source.checked);
+        }
+      }
+      // Define status labels as variables
+      const statusOnline = "Online";
+      const statusOffline = "Offline";
+      const subscriptionActive = "Active";
+      const subscriptionExpired = "Expired";
 
-    document.querySelectorAll('.status-offline').forEach(element => {
-      element.innerHTML = statusOffline;
-    });
+      window.onload = () => {
+        // Apply the status labels to your elements here
+        document.querySelectorAll(".status-online").forEach((element) => {
+          element.innerHTML = statusOnline;
+        });
 
-    document.querySelectorAll('.subscription-active').forEach(element => {
-      element.innerHTML = subscriptionActive;
-    });
+        document.querySelectorAll(".status-offline").forEach((element) => {
+          element.innerHTML = statusOffline;
+        });
 
-    document.querySelectorAll('.subscription-expired').forEach(element => {
-      element.innerHTML = subscriptionExpired;
-    });
-  };
-</script>
-</head>
-<body>
-  <div class="container">
-    <div class="header">
-      <div><input type="checkbox" id="selectAll" onclick="selectAllFarms(this)"></div>
-      <div>Name</div>
-      <div>Location</div>
-      <div>Device Status</div>
-      <div>Subscription Status</div>
+        document.querySelectorAll(".subscription-active").forEach((element) => {
+          element.innerHTML = subscriptionActive;
+        });
+
+        document
+          .querySelectorAll(".subscription-expired")
+          .forEach((element) => {
+            element.innerHTML = subscriptionExpired;
+          });
+      };
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div>
+          <input
+            type="checkbox"
+            id="selectAll"
+            onclick="selectAllFarms(this)"
+          />
+        </div>
+        <div>Name</div>
+        <div>Location</div>
+        <div>Device Status</div>
+        <div>Subscription Status</div>
+      </div>
+      <div class="row" onclick="toggleSelection(this, event)">
+        <input type="checkbox" name="farm" />
+        <div>Farm A</div>
+        <div>Lusaka</div>
+        <div class="status-online">Online</div>
+        <div class="subscription-expired">Expired</div>
+      </div>
+      <div class="row" onclick="toggleSelection(this, event)">
+        <input type="checkbox" name="farm" />
+        <div>Farm B</div>
+        <div>Copperbelt</div>
+        <div class="status-offline">Offline</div>
+        <div class="subscription-active">Active</div>
+      </div>
+      <div class="row" onclick="toggleSelection(this, event)">
+        <input type="checkbox" name="farm" />
+        <div>Farm C</div>
+        <div>Central Province</div>
+        <div class="status-online">Online</div>
+        <div class="subscription-active">Active</div>
+      </div>
+      <div class="row" onclick="toggleSelection(this, event)">
+        <input type="checkbox" name="farm" />
+        <div>Farm D</div>
+        <div>Eastern Province</div>
+        <div class="status-offline">Offline</div>
+        <div class="subscription-expired">Expired</div>
+      </div>
+      <!-- Repeat rows for each farm -->
+      <!-- ... -->
     </div>
-    <div class="row" onclick="toggleSelection(this, event)">
-      <input type="checkbox" name="farm">
-      <div>Farm A</div>
-      <div>Lusaka</div>
-      <div class="status-online">Online</div>
-      <div class="subscription-expired">Expired</div>
-    </div>
-    <div class="row" onclick="toggleSelection(this, event)">
-      <input type="checkbox" name="farm">
-      <div>Farm B</div>
-      <div>Copperbelt</div>
-      <div class="status-offline">Offline</div>
-      <div class="subscription-active">Active</div>
-    </div>
-    <!-- Repeat rows for each farm -->
-    <!-- ... -->
-  </div>
-</body>
+  </body>
 </html>
