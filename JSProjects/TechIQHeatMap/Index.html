@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Map with Side Panel Filters</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="container">
+  <div id="map"></div>
+
+  <div id="filter-panel">
+    <div class="filter">
+      <label for="location-select">Location</label>
+      <select id="location-select">
+        <option value="lusaka">Lusaka</option>
+        <option value="nairobi">Nairobi</option>
+        <!-- Add more options for other locations -->
+      </select>
+    </div>
+    <div class="filter">
+      <label for="farm-filter">Filter by farms</label>
+      <select id="farm-filter">
+        <option value="all">All farms</option>
+        <!-- More options -->
+      </select>
+    </div>
+    <div class="filter">
+      <label for="value-filter">Filter by values</label>
+      <select id="value-filter">
+        <option value="overall">Overall values</option>
+        <!-- More options -->
+      </select>
+    </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script>
+  var map = L.map('map').setView([-15.387526, 28.322817], 13); // Example coordinates of Lusaka
+  
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+  
+  // Add markers for different locations
+  var markers = {
+    lusaka: L.marker([-15.387526, 28.322817]).addTo(map),
+    nairobi: L.marker([-1.286389, 36.817223]).addTo(map)
+    // Add more markers for other locations as needed
+  };
+
+  // Function to update map marker based on selected location
+  function updateMap() {
+    var selectedLocation = document.getElementById("location-select").value;
+    var marker = markers[selectedLocation];
+    if (marker) {
+      map.setView(marker.getLatLng(), 13);
+    }
+  }
+
+  // Event listener for location select change
+  document.getElementById("location-select").addEventListener("change", updateMap);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-collapse: collapse;
+  }
+  
+  .header, .row {
+    display: grid;
+    grid-template-columns: 40px repeat(4, 1fr); /* Five columns: checkbox and four equal columns */
+    padding: 8px 16px;
+    align-items: center;
+  }
+  
+  .header {
+    background-color: #f0f0f0;
+    color: #000000;
+    font-weight: bold;
+    border-bottom: 2px solid #e0e0e0;
+    text-align: left;
+  }
+  
+  .header > div {
+    justify-self: start; /* Align header items to the start (left) */
+  }
+  
+  .header > div:first-child {
+    justify-self: center; /* Center the checkbox header */
+  }
+  
+  .row {
+    border-bottom: 1px solid #e0e0e0;
+    background-color: #ffffff;
+    transition: background-color 0.3s;
+  }
+  
+  .row.selected {
+    background-color: #dae8f1; /* The light blue background for selected rows */
+  }
+  
+  .row:nth-child(even):not(.selected) {
+    background-color: #f9f9f9; /* Slightly different background for even rows */
+  }
+  
+  .row:last-child {
+    border-bottom: none;
+  }
+  
+  .row > div {
+    justify-self: start; /* Align row items to the start (left) */
+    padding: 8px;
+  }
+  
+  .row > div:first-child {
+    justify-self: center; /* Center the checkbox in the row */
+  }
+  
+  .row > div:nth-child(3), /* Device Status column */
+  .row > div:nth-child(4) { /* Subscription Status column */
+    text-align: center; /* Center the content for these columns */
+  }
+  
+  /* Custom checkbox styling */
+  input[type="checkbox"] {
+    margin-right: 10px;
+    cursor: pointer; /* Pointer cursor on hover over the checkbox */
+  }
+  
+  
+
+  
+
+  

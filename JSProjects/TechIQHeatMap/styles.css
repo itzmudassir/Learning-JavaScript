@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500&display=swap');
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Work Sans' , sans-serif;
+  }
+  #container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    height: 100%;
+  }
+  #map {
+    
+    flex-grow: 1;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+    width: 70%;
+    
+  }
+  #filter-panel {
+    width: 20%;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+
+  }
+  .filter {
+    margin-bottom: 1em;
+  }
+  .filter label {
+    display: block;
+  }
+  .filter select {
+    width: 100%;
+    padding: 0.5em;
+    margin-top: 0.5em;
+  }

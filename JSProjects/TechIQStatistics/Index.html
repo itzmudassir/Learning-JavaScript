@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farm Statistics Dashboard</title>
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="dashboard">
+        <div class="dropdowns">
+            <select id="farm-select">
+                <option value="farmA">Farm A</option>
+                <option value="farmB">Farm B</option>
+                <option value="farmC">Farm C</option>
+                <option value="farmD">Farm D</option>
+            </select>
+            <select id="month-select" style="margin-left:auto;">
+                <option value="jan">January</option>
+                <option value="feb">February</option>
+                <option value="mar">March</option>
+                <option value="apr">April</option>
+                <option value="may">May</option>
+                <option value="jun">June</option>
+                <option value="jul">July</option>
+                <option value="aug">August</option>
+                <option value="sep">September</option>
+                <option value="oct">October</option>
+                <option value="nov">November</option>
+                <option value="dec">December</option>
+                <!-- Add more months as needed -->
+            </select>
+        </div>
+        <div class="main-chart">
+            <canvas id="mainChartCanvas"></canvas>
+        </div>
+        <!-- Placeholders for the smaller charts -->
+        <div class="small-charts-container">
+            <div class="small-chart">
+                <canvas id="moistureChartCanvas"></canvas>
+            </div>
+            <div class="small-chart">
+                <canvas id="temperatureChartCanvas"></canvas>
+            </div>
+            <div class="small-chart">
+                <canvas id="phChartCanvas"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="farm-condition">
+        <h2 style="color: #00357d;">Over Farm Condition</h2>
+        <!-- You can add content here if needed -->
+    </div>
+</div>
+<script src="scripts.js"></script>
+</body>
+</html>
